@@ -8,8 +8,7 @@ namespace MicrobitRobot {
     const PRESCARE_SUB_ADDR = 0xfe;
     const PWM_STEP_MAX = 4096;
     const PWM_UPDATE_RATE = 50;
-    const MOTOR_DELAY_TIME = 500000;
-    const SERVO_0_SUB_ADDR = 0x26;
+    const SERVO_0_SUB_ADDR = 0x06;
     const SERVO_SUB_ADDR_OFFSET = 4;
     const SERVO_MOTOR_ROTATION_DEGREE = 90;
     const SERVO_MOTOR_MIN_DUTY = 600; // us
@@ -68,7 +67,7 @@ namespace MicrobitRobot {
 
     export enum ServoMotorPin {
         //% blockId="ServoMotorS1" block="S1"
-        S1 = 0,
+        S1 = 8,
         //% blockId="ServoMotorS2" block="S2"
         S2,
         //% blobkId="ServoMotorS3" block="S3"
@@ -85,7 +84,7 @@ namespace MicrobitRobot {
         S8
     }
 
-    export enum RobotBody {
+    export enum RobotBodyPart {
         //% blobkId="RobotRightArm" block="RIGHT ARM"
         RIGHT_ARM = 0,
         //% blockId="RobotRightHand" block="RIGHT HAND"
@@ -104,33 +103,34 @@ namespace MicrobitRobot {
         LEFT_FOOT
     }
 
-    function getServoMotorId(motor: ServoMotorPin): number {
+    /*     function getServoMotorId(motor: ServoMotorPin): number {
         switch (motor) {
             case ServoMotorPin.S1:
-                return 0;
+                return 8;
             case ServoMotorPin.S2:
-                return 1;
+                return 9;
             case ServoMotorPin.S3:
-                return 2;
+                return 10;
             case ServoMotorPin.S4:
-                return 3;
+                return 11;
             case ServoMotorPin.S5:
-                return 4;
+                return 12;
             case ServoMotorPin.S6:
-                return 5;
+                return 13;
             case ServoMotorPin.S7:
-                return 6;
+                return 14;
             case ServoMotorPin.S8:
-                return 7;
+                return 15;
             default:
                 return -1;
         }
-    }
+    } */
 
-    //% blobkId="mapRobotServo" block="set servo motor %motor| to %body"
+    //% blobkId="mapRobotServo" block="set servo motor %motor| to %part"
     //% color="#cc0000"
-    export function mapRobotServo(body: RobotBody, motor: ServoMotorPin) {
-        switch (body) {
+    export function mapRobotServo(part: RobotBodyPart, motor: ServoMotorPin) {
+        _robotBody[part] = motor;
+        /*         switch (body) {
             case RobotBody.RIGHT_ARM:
                 _robotBody[0] = getServoMotorId(motor);
                 break;
@@ -155,18 +155,20 @@ namespace MicrobitRobot {
             case RobotBody.LEFT_FOOT:
                 _robotBody[7] = getServoMotorId(motor);
                 break;
-        }
+        } */
     }
 
     //% blockId="positionServoMotor" block="position %motor| at %angle degrees."
     //% color="#cc0000"
     //% angle.min=-90 angle.max=90 angle.default=0
-    export function positionServoMotor(body: RobotBody, angle: number) {
+    export function positionServoMotor(part: RobotBodyPart, angle: number) {
         if (!_initialized) initPCA9685();
 
         let opTravel = calcServoAngle(angle);
-        let opMotor = _robotBody[body];
+        let opMotor = _robotBody[part];
         let buffs = pins.createBuffer(5);
+
+        console.log(opMotor.toString());
 
         buffs[0] = SERVO_0_SUB_ADDR + SERVO_SUB_ADDR_OFFSET * opMotor;
         buffs[1] = 0;
