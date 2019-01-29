@@ -103,62 +103,13 @@ namespace MicrobitRobot {
         LEFT_FOOT
     }
 
-    /*     function getServoMotorId(motor: ServoMotorPin): number {
-        switch (motor) {
-            case ServoMotorPin.S1:
-                return 8;
-            case ServoMotorPin.S2:
-                return 9;
-            case ServoMotorPin.S3:
-                return 10;
-            case ServoMotorPin.S4:
-                return 11;
-            case ServoMotorPin.S5:
-                return 12;
-            case ServoMotorPin.S6:
-                return 13;
-            case ServoMotorPin.S7:
-                return 14;
-            case ServoMotorPin.S8:
-                return 15;
-            default:
-                return -1;
-        }
-    } */
-
     //% blobkId="mapRobotServo" block="set servo motor %motor| to %part"
     //% color="#cc0000"
     export function mapRobotServo(part: RobotBodyPart, motor: ServoMotorPin) {
         _robotBody[part] = motor;
-        /*         switch (body) {
-            case RobotBody.RIGHT_ARM:
-                _robotBody[0] = getServoMotorId(motor);
-                break;
-            case RobotBody.RIGHT_HAND:
-                _robotBody[1] = getServoMotorId(motor);
-                break;
-            case RobotBody.RIGHT_LEG:
-                _robotBody[2] = getServoMotorId(motor);
-                break;
-            case RobotBody.RIGHT_FOOT:
-                _robotBody[3] = getServoMotorId(motor);
-                break;
-            case RobotBody.LEFT_ARM:
-                _robotBody[4] = getServoMotorId(motor);
-                break;
-            case RobotBody.LEFT_HAND:
-                _robotBody[5] = getServoMotorId(motor);
-                break;
-            case RobotBody.LEFT_LEG:
-                _robotBody[6] = getServoMotorId(motor);
-                break;
-            case RobotBody.LEFT_FOOT:
-                _robotBody[7] = getServoMotorId(motor);
-                break;
-        } */
     }
 
-    //% blockId="positionServoMotor" block="position %motor| at %angle degrees."
+    //% blockId="positionServoMotor" block="position %motor| at %angle degrees"
     //% color="#cc0000"
     //% angle.min=-90 angle.max=90 angle.default=0
     export function positionServoMotor(part: RobotBodyPart, angle: number) {
@@ -167,15 +118,6 @@ namespace MicrobitRobot {
         let opTravel = calcServoAngle(angle);
         let opMotor = _robotBody[part];
         let buffs = pins.createBuffer(5);
-
-        console.log(opMotor.toString());
-
-        buffs[0] = SERVO_0_SUB_ADDR + SERVO_SUB_ADDR_OFFSET * opMotor;
-        buffs[1] = 0;
-        buffs[2] = 0;
-        buffs[3] = 0;
-        buffs[4] = 0;
-        pins.i2cWriteBuffer(PCA9685_BASE_ADDR, buffs);
 
         control.waitMicros(15);
         buffs[0] = SERVO_0_SUB_ADDR + SERVO_SUB_ADDR_OFFSET * opMotor;
