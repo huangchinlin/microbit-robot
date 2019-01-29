@@ -1,17 +1,17 @@
 {
     "name": "microbit-robot",
-    "version": "0.0.0",
-    "description": "",
+    "version": "0.0.1",
+    "description": "microbit robot",
     "dependencies": {
         "core": "*",
         "bluetooth": "*"
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "_locales/zh/microbit-robot-strings.json",
+        "_locales/zh/microbit-robot-jsdoc-strings.json"
     ],
-    "testFiles": [
-        "test.ts"
-    ],
+    "testFiles": ["test.ts"],
     "public": false
 }
