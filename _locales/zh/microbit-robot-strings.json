@@ -15,7 +15,7 @@
     "MicrobitRobot.ServoMotorPin.S6|block": "S6",
     "MicrobitRobot.ServoMotorPin.S7|block": "S7",
     "MicrobitRobot.ServoMotorPin.S8|block": "S8",
-    "MicrobitRobot.mapRobotServo|block": "設定伺服馬逹 %motor| 給 %body.",
+    "MicrobitRobot.mapRobotServo|block": "設定伺服馬逹 %motor| 給 %part",
     "MicrobitRobot.positionServoMotor|block": "轉動 %motor| 角度 %angle.",
     "{id:category}MicrobitRobot": "阿爸的機器人",
     "MicrobitRobot|block": "阿爸的機器人"
