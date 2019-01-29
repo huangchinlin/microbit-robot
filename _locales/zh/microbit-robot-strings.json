@@ -1,1 +1,22 @@
-{}
+{
+    "MicrobitRobot.RobotBody.LEFT_ARM|block": "左上臂",
+    "MicrobitRobot.RobotBody.LEFT_FOOT|block": "左腳掌",
+    "MicrobitRobot.RobotBody.LEFT_HAND|block": "左前臂",
+    "MicrobitRobot.RobotBody.LEFT_LEG|block": "左大腿",
+    "MicrobitRobot.RobotBody.RIGHT_ARM|block": "右上臂",
+    "MicrobitRobot.RobotBody.RIGHT_FOOT|block": "右腳掌",
+    "MicrobitRobot.RobotBody.RIGHT_HAND|block": "右前臂",
+    "MicrobitRobot.RobotBody.RIGHT_LEG|block": "右大腿",
+    "MicrobitRobot.ServoMotorPin.S1|block": "S1",
+    "MicrobitRobot.ServoMotorPin.S2|block": "S2",
+    "MicrobitRobot.ServoMotorPin.S3|block": "S3",
+    "MicrobitRobot.ServoMotorPin.S4|block": "S4",
+    "MicrobitRobot.ServoMotorPin.S5|block": "S5",
+    "MicrobitRobot.ServoMotorPin.S6|block": "S6",
+    "MicrobitRobot.ServoMotorPin.S7|block": "S7",
+    "MicrobitRobot.ServoMotorPin.S8|block": "S8",
+    "MicrobitRobot.mapRobotServo|block": "設定伺服馬逹 %motor| 給 %body.",
+    "MicrobitRobot.positionServoMotor|block": "轉動 %motor| 角度 %angle.",
+    "{id:category}MicrobitRobot": "阿爸的機器人",
+    "MicrobitRobot|block": "阿爸的機器人"
+}
