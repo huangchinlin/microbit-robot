@@ -12,6 +12,9 @@
         "_locales/zh/microbit-robot-strings.json",
         "_locales/zh/microbit-robot-jsdoc-strings.json"
     ],
-    "testFiles": ["test.ts"],
-    "public": false
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": false,
+    "installedVersion": "workspace:5c55bb5a-694a-4314-1ca8-e3f52c43b9fe"
 }
