@@ -1,0 +1,5 @@
+{
+    "{id:category}MicrobitRobot": "阿爸的機器人",
+    "MicrobitRobot|block": "阿爸的機器人",
+    "MicrobitRobot.positionServoMotor|block": "position %motor| at %angle degrees."
+}
