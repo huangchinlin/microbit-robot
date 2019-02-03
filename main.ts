@@ -11,7 +11,7 @@ namespace MicrobitRobot {
     const SERVO_0_SUB_ADDR = 0x06;
     const SERVO_SUB_ADDR_OFFSET = 4;
     const SERVO_MOTOR_ROTATION_DEGREE = 90;
-    const SERVO_MOTOR_MIN_DUTY = 600; // us
+    const SERVO_MOTOR_MIN_DUTY = 500; // us
     const SERVO_MOTOR_MAX_DUTY = 2400; // us
     const SERVO_MOTOR_ONE_CYCLE = 20000; // us
     const SERVO_MOTOR_DUTY_PER_DEGREE =
