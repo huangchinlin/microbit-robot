@@ -4,7 +4,8 @@
     "description": "microbit robot",
     "dependencies": {
         "core": "*",
-        "bluetooth": "*"
+        "bluetooth": "*",
+        "microphone": "*"
     },
     "files": [
         "README.md",
@@ -16,5 +17,12 @@
         "test.ts"
     ],
     "public": false,
-    "installedVersion": "workspace:5c55bb5a-694a-4314-1ca8-e3f52c43b9fe"
+    "targetVersions": {
+        "target": "4.0.11",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
 }
