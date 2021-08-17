@@ -3,8 +3,7 @@
     "version": "0.0.1",
     "description": "microbit robot",
     "dependencies": {
-        "core": "*",
-        "bluetooth": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
